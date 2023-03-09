@@ -33,6 +33,7 @@ function game(){
 
     let computer_score = 0;
     let player_score = 0;
+    let tie = 0;
 
     for(let i = 0; i < 5; i++){
         let playerSelection = "";
@@ -47,19 +48,20 @@ function game(){
         let winner = playRound(playerSelection,computerSelection)
 
         if(winner == "player"){
-            player_score++;
+            player_score++
             alert(`You chose ${playerSelection}`)
             alert(`Computer chose ${computerSelection}`)
             alert('You won this round !')
         }
         if(winner == "computer"){
-            computer_score++;
+            computer_score++
             alert(`You chose ${playerSelection}`)
             alert(`Computer chose ${computerSelection}`)
             alert('Computer won this round !')
         }
         if(winner == 0)
         {
+            tie++
             alert(`You chose ${playerSelection}`)
             alert(`Computer chose ${computerSelection}`)
             alert(`This round is a tie !`)
@@ -67,14 +69,14 @@ function game(){
     }
 
     if(player_score > computer_score){
-        alert(`Your score : ${player_score},  Computer's score : ${computer_score} \n You Won!`)
+        alert(`Your score : ${player_score},  Computer's score : ${computer_score}, Tie : ${tie}\n You Won!`)
     }
-    if(player_score < computer_score){
-        alert(`Your score : ${player_score},  Computer's score : ${computer_score} \n You Lost!`)
+    else if(player_score < computer_score){
+        alert(`Your score : ${player_score},  Computer's score : ${computer_score}, Tie : ${tie}\n You Lost!`)
     }
     else 
     {
-        alert(`Your score : ${player_score},  Computer's score : ${computer_score} \n Its a tie!`)
+        alert(`Your score : ${player_score},  Computer's score : ${computer_score}, Tie : ${tie}\n Its a tie!`)
     }
 }
 
